@@ -16,3 +16,6 @@ sudo apt-get install \
     powershell-preview \
     dotnet-sdk-3.0 \
     -y > /dev/null 2>&1
+
+# Clean up
+rm -f /home/$USER/packages-microsoft-prod.deb
