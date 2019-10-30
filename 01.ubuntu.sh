@@ -1,10 +1,12 @@
-# Update repositores
-sudo apt-get update -y
+#!/bin/bash -e
 
-# Upgrade all packages
-sudo apt-get upgrade -y
+echo "Updating Repositories..."
+sudo apt-get update -y > /dev/null 2>&1
 
-# Install packages
+echo "Upgrading All Packages..."
+sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y > /dev/null 2>&1
+
+echo "Installing New Packages..."
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -12,6 +14,7 @@ sudo apt-get install \
     gnupg-agent \
     fortune \
     software-properties-common \
-    zsh -y -f
+    zsh -y > /dev/null 2>&1
 
-sudo apt autoremove -y
+echo "Running Cleanup..."
+sudo apt autoremove -y > /dev/null 2>&1

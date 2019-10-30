@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 # Install kernel extra's to enable docker aufs support
 # sudo apt-get -y install linux-image-extra-$(uname -r)
 
@@ -7,21 +9,21 @@
 # sudo apt-get update
 # sudo apt-get install lxc-docker -y
 
-# Alternatively you can use the official docker install script
-wget -qO- https://get.docker.com/ | sh
+# Use the official docker install script
+echo "Installing Docker..."
+wget -qO- https://get.docker.com/ | sh > /dev/null 2>&1
 
 # Add the user to the Docker group
 sudo usermod -aG docker $(whoami)
 
-# Install docker-compose
+echo "Installing Docker-Compose..."
 COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oP "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | tail -n 1`
-sudo sh -c "curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose"
+sudo sh -c "curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose" > /dev/null 2>&1
 sudo chmod +x /usr/local/bin/docker-compose
-sudo sh -c "curl -L https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose"
+sudo sh -c "curl -L https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose" > /dev/null 2>&1
 
-# Install docker-cleanup command
-cd /tmp
-git clone https://gist.github.com/76b450a0c986e576e98b.git
-cd 76b450a0c986e576e98b
-sudo mv docker-cleanup /usr/local/bin/docker-cleanup
+echo "Installing Docker-Cleanup..."
+git clone https://gist.github.com/76b450a0c986e576e98b.git /tmp/76b450a0c986e576e98b > /dev/null 2>&1
+sudo mv /tmp/76b450a0c986e576e98b/docker-cleanup /usr/local/bin/docker-cleanup
 sudo chmod +x /usr/local/bin/docker-cleanup
+rm -rf /tmp/76b450a0c986e576e98b

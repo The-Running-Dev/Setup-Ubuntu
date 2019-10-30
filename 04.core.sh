@@ -1,12 +1,18 @@
-# Add Microsoft repositories
+#!/bin/bash -e
+
 # Source: https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
+echo "Downloading the Microsoft Repository GPG Keys..."
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb > /dev/null 2>&1
+sudo dpkg -i packages-microsoft-prod.deb > /dev/null 2>&1
 
-sudo add-apt-repository universe
+echo "Updating Repositories..."
+sudo apt-get update > /dev/null 2>&1
 
-# Update repositores
-sudo apt-get update -y
+echo "Adding the Universe Repository..."
+sudo add-apt-repository universe > /dev/null 2>&1
 
-# Install PowerShell Preview and .NET SDK
-sudo apt-get install powershell-preview dotnet-sdk-3.0 -y
+echo "Installing PowerShell and .NET Core..."
+sudo apt-get install \
+    powershell-preview \
+    dotnet-sdk-3.0 \
+    -y > /dev/null 2>&1
