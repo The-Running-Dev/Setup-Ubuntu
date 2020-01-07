@@ -14,7 +14,7 @@ sudo add-apt-repository universe > /dev/null 2>&1
 echo "Installing PowerShell and .NET Core..."
 sudo apt-get install \
     powershell-preview \
-    dotnet-sdk-3.0 \
+    dotnet-sdk-3.1 \
     -y > /dev/null 2>&1
 
 # Clean up
