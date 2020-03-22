@@ -17,5 +17,8 @@ sudo apt-get install \
     dotnet-sdk-3.1 \
     -y > /dev/null 2>&1
 
+echo "Installing Azure CLI..."
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
 # Clean up
 rm -f /home/$USER/packages-microsoft-prod.deb
