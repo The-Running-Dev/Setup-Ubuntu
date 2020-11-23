@@ -4,7 +4,7 @@ dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 zshConfig="$dir/.zshrc"
 
 echo "Installing Oh My ZSH..."
-sh -c "$(curl -fsSLk https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended"> /dev/null 2>&1
+sh -c "$(curl -fsSLk https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" > /dev/null 2>&1
 
 echo "Copying ZSH Config..."
 cp -f $zshConfig /home/$USER/

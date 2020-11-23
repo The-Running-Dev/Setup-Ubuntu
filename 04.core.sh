@@ -18,7 +18,7 @@ sudo apt-get install \
     -y > /dev/null 2>&1
 
 echo "Installing Azure CLI..."
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash > /dev/null 2>&1
 
 # Clean up
 rm -f /home/$USER/packages-microsoft-prod.deb

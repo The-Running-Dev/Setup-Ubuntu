@@ -12,7 +12,6 @@ DISABLE_UNTRACKED_FILES_DIRTY=true
 DISABLE_UPDATE_PROMPT=true
 
 plugins=(
-  aws
   chucknorris
   docker
   docker-compose

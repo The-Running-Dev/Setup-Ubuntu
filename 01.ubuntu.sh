@@ -14,6 +14,7 @@ sudo apt-get install \
     gnupg-agent \
     fortune \
     software-properties-common \
+    nfs-common \
     zsh -y > /dev/null 2>&1
 
 echo "Running Cleanup..."
