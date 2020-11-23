@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
 echo "Updating Repositories..."
-sudo apt-get update -y > /dev/null 2>&1
+sudo apt-get update -y
 
 echo "Upgrading All Packages..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y > /dev/null 2>&1
+sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 
 echo "Installing New Packages..."
 sudo apt-get install \
@@ -15,7 +15,7 @@ sudo apt-get install \
     fortune \
     software-properties-common \
     nfs-common \
-    zsh -y > /dev/null 2>&1
+    zsh -y
 
 echo "Running Cleanup..."
-sudo apt autoremove -y > /dev/null 2>&1
+sudo apt autoremove -y

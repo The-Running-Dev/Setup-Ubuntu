@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 echo "Installing NodeJS..."
-curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash - > /dev/null 2>&1
-sudo apt-get install -y nodejs > /dev/null 2>&1
+curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
 echo "Installing NodeJS Packages..."
 sudo npm install --silent --unsafe-perm -g @angular/cli \
@@ -17,4 +17,4 @@ sudo npm install --silent --unsafe-perm -g @angular/cli \
     typescript \
     serverless \
     webpack \
-    yow > /dev/null 2>&1
+    yow
