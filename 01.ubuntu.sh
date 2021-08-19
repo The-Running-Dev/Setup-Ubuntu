@@ -26,4 +26,4 @@ echo "Running Cleanup..."
 sudo apt autoremove -y
 
 echo "Copying Unattended Upgrades Config..."
-cp -f $unattendedUpgradesConfig /etc/apt/apt.conf.d/50unattended-upgrades
+sudo cp -f $unattendedUpgradesConfig /etc/apt/apt.conf.d/50unattended-upgrades
