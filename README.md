@@ -11,7 +11,7 @@ Login as User, not root
 ## Run from Repository
 
 ```bash
-sh -c "$(curl -fsSLk https://raw.githubusercontent.com/The-Running-Dev/Setup-Ubuntu/master/install.remote.sh)"
+bash -c "$(curl -fsSLk https://raw.githubusercontent.com/The-Running-Dev/Setup-Ubuntu/master/install.remote.sh)"
 ```
 
 ## Install Certificats

@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 echo "Installing NodeJS..."
-curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 echo "Installing NodeJS Packages..."
