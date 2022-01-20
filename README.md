@@ -2,7 +2,7 @@
 
 ## Run Locally
 
-Login as User, not root
+Login as yourself, not root
 
 ```bash
 /mnt/d/Dev/Projects/Setup-Ubuntu/install.sh
@@ -14,7 +14,7 @@ Login as User, not root
 bash -c "$(curl -fsSLk https://raw.githubusercontent.com/The-Running-Dev/Setup-Ubuntu/master/install.remote.sh)"
 ```
 
-## Install Certificats
+## Install Certificates
 
 If you are behind a SSL intercepting proxy, install the certificates locally first.
 
